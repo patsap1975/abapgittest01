@@ -1,0 +1,43 @@
+*&---------------------------------------------------------------------*
+*& Report ZPAT_EHP8TEST
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT zpat_ehp8test.
+
+DATA: lv_total         TYPE i,
+        lv_available     TYPE i,
+        lv_rec           TYPE i,
+        lv_use           TYPE p DECIMALS 2,
+        lv_count_try     TYPE i,
+        lv_lines         TYPE i,
+        lv_batch         TYPE i,
+        lv_counter       TYPE char3,
+        lv_taskname      TYPE string,
+        lv_factor        TYPE p DECIMALS 2,
+        lv_server_status TYPE xfeld,
+        lv_first_batch   TYPE boole_d,
+        lv_retro         TYPE boole_d,
+        lv_regular       TYPE boole_d,
+        lv_vac_pyout     TYPE boole_d,
+        lv_first_line    TYPE syst_tabix,
+        lv_last_line     TYPE syst_tabix,
+        lt_input_data    TYPE ztthpy_pyi008_wb_file,
+        lt_audit_data    TYPE ztthpy_pyi008_wb_file,
+        lt_error_data    TYPE ztthpy_pyi008_wb_file.
+
+
+
+
+  lv_use = 9 * ( 3 / 4 ).
+  lv_factor = ceil( lv_use ).
+  write:/ lv_factor.
+
+  lv_rec = 1000 / lv_factor.
+
+
+  lv_batch = ceil( lv_factor ).
+
+
+
+  Write:/ lv_batch.
